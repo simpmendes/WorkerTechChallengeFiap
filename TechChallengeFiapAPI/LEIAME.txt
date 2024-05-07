@@ -1,0 +1,15 @@
+﻿Processo de resolução de Teste Técnico de API REST
+1. Criar as Actions do Controller e testar todas para garantir que estejam funcionando. 
+Retornar NoContent para PUT e DELETE, e OK para todas as outras
+2. Implementar entidade do domínio
+3. Atualizar Actions do Controller com entidade do domínio (POST e PUT recebendo como parâmetro, 
+e POST retornando CreatedAtAction) - BUILD
+4. Adicionar Microsoft.EntityFrameworkCore.InMemory, criar DbContext, e configurar na Program.cs
+5. Adicionar instância do DbContext no Controller, e usar ele em todas as operações com a sintaxe LINQ
+6. Testar e garantir que funciona em memória.
+[OPCIONAL]
+7. Adicionar configuração de connection string do Banco de Dados no appsettings.json, atualizar
+configuração no Program.cs, e gerar as migrations com 
+dotnet ef migrations add Initial -o Persistence/Migrations
+dotnet ef database update
+8. Testar novamente
